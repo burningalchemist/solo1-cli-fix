@@ -20,6 +20,10 @@ patch -Np1 -i 001_ctap2_uncapitalized_class.patch
 # Fix ClientPin class method calls correctly (to fix PIN-related commands
 # e.g. `solo key credential ls`)
 patch -Np1 -i 002_client_pin_call.patch
+
+# Fix `solo key make-credential` command, comment out unavailable commands
+# (e.g. `sign-file`, `probe`, `keyboard` are only available for Solo Hacker)
+patch -Np1 -i 003_fido2_user_interaction.patch
 ```
 
 ## References
